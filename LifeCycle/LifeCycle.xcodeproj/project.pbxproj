@@ -13,8 +13,9 @@
 		C282E548261F65F600F9BA5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C282E546261F65F600F9BA5E /* Main.storyboard */; };
 		C282E54A261F65F700F9BA5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C282E549261F65F700F9BA5E /* Assets.xcassets */; };
 		C282E54D261F65F700F9BA5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C282E54B261F65F700F9BA5E /* LaunchScreen.storyboard */; };
-		C282E558261F65F700F9BA5E /* LifeCycleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C282E557261F65F700F9BA5E /* LifeCycleTests.swift */; };
 		C282E563261F65F700F9BA5E /* LifeCycleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C282E562261F65F700F9BA5E /* LifeCycleUITests.swift */; };
+		C282E574261F667300F9BA5E /* MyClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C282E573261F667300F9BA5E /* MyClass.swift */; };
+		C282E581261F681600F9BA5E /* MyClassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C282E580261F681600F9BA5E /* MyClassTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,11 +45,12 @@
 		C282E54C261F65F700F9BA5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C282E54E261F65F700F9BA5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C282E553261F65F700F9BA5E /* LifeCycleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LifeCycleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C282E557261F65F700F9BA5E /* LifeCycleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeCycleTests.swift; sourceTree = "<group>"; };
 		C282E559261F65F700F9BA5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C282E55E261F65F700F9BA5E /* LifeCycleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LifeCycleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C282E562261F65F700F9BA5E /* LifeCycleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeCycleUITests.swift; sourceTree = "<group>"; };
 		C282E564261F65F700F9BA5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C282E573261F667300F9BA5E /* MyClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClass.swift; sourceTree = "<group>"; };
+		C282E580261F681600F9BA5E /* MyClassTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClassTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				C282E549261F65F700F9BA5E /* Assets.xcassets */,
 				C282E54B261F65F700F9BA5E /* LaunchScreen.storyboard */,
 				C282E54E261F65F700F9BA5E /* Info.plist */,
+				C282E573261F667300F9BA5E /* MyClass.swift */,
 			);
 			path = LifeCycle;
 			sourceTree = "<group>";
@@ -113,7 +116,7 @@
 		C282E556261F65F700F9BA5E /* LifeCycleTests */ = {
 			isa = PBXGroup;
 			children = (
-				C282E557261F65F700F9BA5E /* LifeCycleTests.swift */,
+				C282E580261F681600F9BA5E /* MyClassTests.swift */,
 				C282E559261F65F700F9BA5E /* Info.plist */,
 			);
 			path = LifeCycleTests;
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C282E574261F667300F9BA5E /* MyClass.swift in Sources */,
 				C282E545261F65F600F9BA5E /* ViewController.swift in Sources */,
 				C282E541261F65F600F9BA5E /* AppDelegate.swift in Sources */,
 				C282E543261F65F600F9BA5E /* SceneDelegate.swift in Sources */,
@@ -268,7 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C282E558261F65F700F9BA5E /* LifeCycleTests.swift in Sources */,
+				C282E581261F681600F9BA5E /* MyClassTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
