@@ -62,4 +62,25 @@ class AssertYourselfTests: XCTestCase {
         let optionalValue: StructWithDescription? = StructWithDescription(x: 1, y: 2)
         XCTAssertNil(optionalValue)
     }
+    
+    func test_assertEqual() {
+        let actual = "actual"
+//        XCTAssertEqual(actual, "expected")
+        XCTAssertEqual("expected", actual)
+    }
+    
+    func test_assertEqual_withOptional() {
+        let result: String? = "foo"
+        XCTAssertEqual(result, "bar")
+    }
+    
+    func test_floatingPointDanger() {
+        let result = 0.1 + 0.2
+        XCTAssertEqual(result, 0.3)
+    }
+    
+    func test_floatingPointFixed() {
+        let result = 0.1 + 0.2
+        XCTAssertEqual(result, 0.3, accuracy: 0.00001)
+    }
 }
