@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import ViewControllerPresentationSpy
 @testable import Navigation
 
 // We can't use this for a view controller that comes from a storyboard.
@@ -24,6 +25,22 @@ private class TestableViewController: ViewController {
 }
 
 class ViewControllerTests: XCTestCase {
+    
+    private var sut: ViewController!
+    
+    override func setUp() {
+        super.setUp()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        sut = storyboard.instantiateViewController(identifier: String(describing: ViewController.self))
+        sut.loadViewIfNeeded()
+    }
+    
+    override func tearDown() {
+        executeRunLoop()
+        sut = nil
+        
+        super.tearDown()
+    }
 
 //    func test_tappingCodePushButton_shouldPushCodeViewController() {
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -45,9 +62,7 @@ class ViewControllerTests: XCTestCase {
 //    }
     
     func test_INCORRECT_tappingCodeModalButton_shouldPresentCodeNextViewController() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let sut: ViewController = storyboard.instantiateViewController(identifier: String(describing: ViewController.self))
-        sut.loadViewIfNeeded()
+        
         
         UIApplication.shared.windows.first?.rootViewController = sut
         
@@ -60,5 +75,24 @@ class ViewControllerTests: XCTestCase {
         }
         XCTAssertEqual(codeNextVC.label.text, "Modal from code")
     }
+    
+    func testTappingSeguePushButtonShouldShowSegueNextViewController() {
+        let presentationVerifier = PresentationVerifier()
+        putInWindow(sut)
+        tap(sut.seguePushButton)
+        
+        let segueNextVC: SegueNextViewController? = presentationVerifier.verify(animated: true, presentingViewController: sut)
+        
+        XCTAssertEqual(segueNextVC?.labelText, "Pushed from segue")
+    }
 
+    func test_tappingSegueModalButton_shouldShowSegueNextViewController() {
+        let presentationVerifier = PresentationVerifier()
+        
+        tap(sut.segueModalButton)
+        
+        let segueNextVC: SegueNextViewController? = presentationVerifier.verify(animated: true, presentingViewController: sut)
+        
+        XCTAssertEqual(segueNextVC?.labelText, "Modal from segue")
+    }
 }
